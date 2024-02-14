@@ -4,4 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-  
+.menu li a[href='/'] {
+    color: white;
+  }
+.menu li a[href='/register'] {
+    color: white;
+  }

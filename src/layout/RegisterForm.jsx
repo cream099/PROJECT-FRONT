@@ -34,7 +34,7 @@ export default function RegisterForm() {
 
   return (
   <div className="p-5 border w-1/3 min-w-[300px] mx-auto rounded-[15px] mt-8 bg-zinc-200 shadow-md">
-    <div className="font-bold text-2xl mb-5 text-center">Register Form</div>
+    <div className="font-bold text-2xl mb-5 text-center">Register</div>
     <form className="flex flex-col gap-4 items-center" onSubmit={hdlSubmit}>
       <label className="w-full max-w-xs">
         <div className="label">
@@ -98,7 +98,7 @@ export default function RegisterForm() {
       </label>
       <div className="flex gap-5 mt-7">
         <button type="submit" className="font-bold text-sm bg-stone-700 text-white py-2 px-4 rounded-[10px] hover:bg-emerald-700 transition duration-300">Submit</button>
-        <button type="reset" className="font-bold text-sm bg-stone-700 text-white py-2 px-4 rounded-[10px] hover:bg-yellow-600 transition duration-300">Reset</button>
+        <button type="reset" className="w-20 font-bold text-sm bg-stone-700 text-white py-2 px-4 rounded-[10px] hover:bg-yellow-600 transition duration-300">Reset</button>
       </div>
     </form>
   </div>
