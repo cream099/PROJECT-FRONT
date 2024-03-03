@@ -37,7 +37,7 @@ export default function LoginForm() {
 
       <form className="flex flex-col gap-4 items-center" onSubmit={hdlSubmit}>
         <label className="w-full max-w-xs">
-          <span className="text-gray-500">Email</span>
+          <span className="text-gray-500">Username</span>
           <input
             type="text"
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"

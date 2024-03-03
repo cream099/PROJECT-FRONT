@@ -10,3 +10,18 @@
 .menu li a[href='/register'] {
     color: white;
   }
+.menu li a[href='/new'] {
+    color: white;
+  }
+.menu li a[href='/cart'] {
+    color: white;
+  }
+.menu li a[href='/heart'] {
+    color: white;
+  }
+.menu li a[href='/account'] {
+    color: white;
+  }
+.cart {
+    color: #000000;
+  }

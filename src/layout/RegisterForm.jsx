@@ -89,9 +89,9 @@ export default function RegisterForm() {
           <span className="label-text">Phone</span>
         </div>
         <input
-          type="password"
+          type="phone"
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-opacity-50"
-          name="confirmPassword"
+          name="phone"
           value={input.phone}
           onChange={hdlChange}
         />

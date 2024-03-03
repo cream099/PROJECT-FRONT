@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Carousel } from 'flowbite-react';
 import {useEffect, useState} from 'react'
 
 export default function UserHome() {
@@ -16,9 +17,15 @@ export default function UserHome() {
   }, [] )
 
   return (
-    <>
-    <div>UserHome</div>
-    { JSON.stringify(todos)}
-    </>
+    <div className='bg-slate-400'>
+    {/* <div>UserHome</div>
+    { JSON.stringify(todos)} */}
+    <div className="mt-10 h-56 sm:h-64 xl:h-80 2xl:h-96">
+      <Carousel pauseOnHover>
+        <img src="src/assets/fai.jpg" alt="..." className='h-full w-full object-cover'/>
+        <img src="src/assets/fai2.jpg" alt="..." className='h-full w-full object-cover'/>
+      </Carousel>
+    </div>
+    </div>
   )
 }
