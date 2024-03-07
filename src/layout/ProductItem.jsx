@@ -111,6 +111,10 @@ const ProductItem = () => {
                 <p className="mt-1 flex lg:flex-1 text-lg font-medium text-orange-400">{product.price}</p>
                 <button className="btn" onClick={() => showModal(product)}><FaShoppingCart /></button>
                 {selectedProduct && (
+
+
+
+                  
                   <dialog open className="modal">
                     <div className="modal-box max-w-3xl">
                       <form method="dialog">

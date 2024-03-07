@@ -1,36 +1,27 @@
-import React, { useState } from 'react';
-import { FaRegTrashAlt, FaTrash } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
-const initialManage = [
-  {
-    id: 1,
-    name: 'admin',
-    email: 'admin@gmail.com',
-    username: 'admin',
-    status: 'ใช้งาน',
-  },
-  {
-    id: 2,
-    name: 'user',
-    email: 'user@gmail.com',
-    username: 'user',
-    status: 'ใช้งาน',
-  },
-];
+export default function AdminManage() {
+  const [users, setUsers] = useState([
+  ]);
 
-function AdminManage() {
-  const [manage, setManage] = useState(initialManage);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        let token = localStorage.getItem("token");
+        const response = await axios.get('http://localhost:8000/todos/all', {
+          headers: { Authorization: `Bearer ${token}` },
 
-  const handleDeleteUser = (userId) => {
-    // กรอกโค้ดที่จำเป็นสำหรับการลบผู้ใช้จาก state หรือแหล่งข้อมูล
-    console.log(`ลบผู้ใช้รหัส: ${userId}`);
+        });
+        setUsers(response.data.users);
+      } catch (error) {
+        console.error(' error users:', error);
+      }
+    };
 
-    // (ตัวอย่าง) สร้างรายการใหม่ที่ไม่มีผู้ใช้ที่ต้องการลบ
-    const updatedManage = manage.filter((user) => user.id !== userId);
-
-    // อัปเดต state เพื่อทำให้ UI ทำการ render ใหม่
-    setManage(updatedManage);
-  };
+    fetchUsers();
+  }, []);  
 
   return (
     <div>
@@ -43,16 +34,16 @@ function AdminManage() {
               ไอดี
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              ชื่อ
+              ชื่อผู้ใช้
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               อีเมล
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              ชื่อผู้ใช้
+              รหัสผ่าน
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              สถานะ
+              ผู้ใช้งาน
             </th>
             <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
               ลบชื่อผู้ใช้
@@ -61,15 +52,15 @@ function AdminManage() {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
-          {manage.map((user) => (
+          {users.map((user) => (
             <tr key={user.id} className="bg-white">
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 {user.id}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.name}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.email}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.username}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.status}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.email ? user.email : 'No email provided'}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.password}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.role}</td>
               <td className="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
               <button onClick={() => handleDeleteUser(user.id)} className="text-orange-400 rounded-[8px] hover:underline w-10 h-7">
                   <FaRegTrashAlt/>
@@ -83,5 +74,3 @@ function AdminManage() {
     </div>
   );
 }
-
-export default AdminManage;

@@ -80,7 +80,7 @@ function AdminPayment() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-orange-400">{product.price}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{product.status}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                <Link to="/edit">
+                <Link to="">
                 <button href="#" className="text-gray-600 rounded-[8px] hover:underline w-10 h-7">
                   <FaSearch/>
                 </button>

@@ -19,6 +19,7 @@ import AdminPayment from '../admin/AdminPayment'
 import AdminReport from '../admin/AdminReport'
 import AdminEdit from '../admin/AdminEdit'
 import AddProduct from '../admin/AddProduct'
+import Admin from '../admin/Admin'
 
 const guestRouter = createBrowserRouter([
   {
@@ -82,6 +83,7 @@ const adminRouter = createBrowserRouter([
       { path: '/payment', element: <Payment/>},
       { path: '/shipment', element: <Shipment/>},
       { path: '/order', element: <Order/>},
+      { path: '/admin', element: <Admin/>},
     ]
   }
 ])

@@ -28,7 +28,7 @@ export default function Example() {
         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
-              {/* {({ active }) => (
+              {({ active }) => (
                 <a
                   href="#"
                   className={classNames(
@@ -64,7 +64,7 @@ export default function Example() {
                 >
                   License
                 </a>
-              )} */}
+              )}
             </Menu.Item>
             <form method="POST" action="#">
               <Menu.Item>
